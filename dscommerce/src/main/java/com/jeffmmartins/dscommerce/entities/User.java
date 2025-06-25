@@ -3,6 +3,8 @@ package com.jeffmmartins.dscommerce.entities;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "tb_user")
@@ -16,6 +18,9 @@ public class User {
     private String email;
     private LocalDate birthDate;
     private String password;
+
+    @OneToMany(mappedBy = "cliente")
+    private List<Order> orders = new ArrayList<>();
 
     public User(){}
 
