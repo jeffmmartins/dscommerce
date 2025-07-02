@@ -14,7 +14,7 @@ public class Order {
     private Long id;
 
     //Inatntante que o pedido foi feito;
-    @Column(columnDefinition = "TIMESTAMP WHIOUT TIME ZONE")
+    @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
     private Instant moment;
     private OrderStatus status;
 
