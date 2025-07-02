@@ -80,4 +80,9 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    // Para ter acesso a list
+    public List<Order> getOrders() {
+        return orders;
+    }
 }

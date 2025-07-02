@@ -12,6 +12,9 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    //Inatntante que o pedido foi feito;
+    @Column(columnDefinition = "TIME STAMP WHIOUT TIME ZONE")
     private Instant moment;
     private OrderStatus status;
 
