@@ -1,9 +1,14 @@
 package com.jeffmmartins.dscommerce.entities;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Category {
 
     private Long id;
     private String name;
+
+    private Set<Product> products = new HashSet<>();
 
     public Category(Long id, String name) {
         this.id = id;
@@ -24,5 +29,9 @@ public class Category {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<Product> getProducts() {
+        return products;
     }
 }
