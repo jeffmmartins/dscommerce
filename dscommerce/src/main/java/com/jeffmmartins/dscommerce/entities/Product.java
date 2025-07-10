@@ -1,5 +1,8 @@
 package com.jeffmmartins.dscommerce.entities;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Product {
 
     private Long id;
@@ -7,6 +10,9 @@ public class Product {
     private String description;
     private Double price;
     private String imgUrl;
+
+    //Tem uma referencia para coleção de categorias, que não tem repetição ( relação muitos para muitos)
+    private Set<Category> categories = new HashSet<>();
 
     public Product(Long id, String name, String description, Double price, String imgUrl) {
         this.id = id;
@@ -54,5 +60,9 @@ public class Product {
 
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
+    }
+
+    public Set<Category> getCategories() {
+        return categories;
     }
 }
