@@ -15,6 +15,8 @@ public class User {
     private long id;
     private String name;
     private String phone;
+    //campo único que não se repete
+    @Column(unique = true)
     private String email;
     private LocalDate birthDate;
     private String password;

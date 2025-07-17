@@ -13,12 +13,15 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    @Column(columnDefinition = "TEXT")
     private String description;
     private Double price;
     private String imgUrl;
 
     //Tem uma referencia para coleção de categorias, que não tem repetição ( relação muitos para muitos)
+    //Mapeamento muitos para muitos
     @ManyToMany
+    //Jointable são as configurações da outra tabela a chave estrangeira
     @JoinTable(name = "tb_product_category",
                joinColumns = @JoinColumn(name = "product_id"),
                inverseJoinColumns = @JoinColumn(name = "category_id"))
