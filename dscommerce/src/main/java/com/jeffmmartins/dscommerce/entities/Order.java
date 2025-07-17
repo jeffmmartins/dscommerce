@@ -4,6 +4,8 @@ import com.jeffmmartins.dscommerce.enums.OrderStatus;
 import jakarta.persistence.*;
 
 import java.time.Instant;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "tb_order")
@@ -25,6 +27,9 @@ public class Order {
     //Cascade é usado para que funcione corretamente o OneToOne, e propagam de uma entidade "pai" para suas entidades "filhas" associada
     @OneToOne(mappedBy = "order",cascade = CascadeType.ALL)
     private Payment payment;
+
+    @OneToMany(mappedBy = "id.order")
+    private Set<OrderItem> items = new HashSet<>();
 
     public Order(){
 
